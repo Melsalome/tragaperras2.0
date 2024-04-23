@@ -1,32 +1,25 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import Tragaperras from './components/tragaperras/Tragaperras';
+import Winner from './components/Winner/Winner';
 
 function App() {
-  const [currentLight, setCurrentLight] = useState('red');
-  const setRed = () => {
-    setCurrentLight('red');
-    setTimeout( () => {
-      setGreen();
-    },1000)
-  };
-  const setGreen = () => {
-    setCurrentLight('green');
-    setTimeout( () => {
-      setYellow();
-    },1000)
-  };
-  const setYellow = () => {
-    setCurrentLight('yellow');
-    setTimeout( () => {
-      setRed();
-    },1000)
-  };
-  useEffect( () => {
-    setGreen();
-  },[])
+  const [isWinner, setIsWinner] = useState(false);
+
+  const winner = () => {
+    if(isWinner) {
+      return <Winner setStateWinner={setIsWinner}></Winner>
+    } else {
+      return  <Tragaperras fnWinner={setIsWinner} currentWinner={isWinner}></Tragaperras>
+    }
+  } 
+
+  
   return (
     <>
-    <p>{currentLight}</p>
+  
+  {winner()}
+    
     </>
   )
 }
