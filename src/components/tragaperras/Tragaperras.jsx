@@ -21,9 +21,9 @@ const getRandomWheel = () => {
 }
 
   const [isPlaying, setIsPlaying] = useState(false);
-  let wheelOne = getRandomWheel();
-  let wheelTwo = getRandomWheel();
-  let wheelThree = getRandomWheel();
+  const wheelOne = getRandomWheel();
+  const wheelTwo = getRandomWheel();
+  const wheelThree = getRandomWheel();
 
   const spinWheel = () => {
     const interval = setInterval(() => {
