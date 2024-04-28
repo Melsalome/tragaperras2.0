@@ -18,19 +18,6 @@ export default function Tragaperras({ fnWinner, currentWinner }) {
     return Math.floor(Math.random() * arr.length);
   };
 
-  // const triggerSlotRotation = ref => {
-  //   function setTop(top) {
-  //     ref.style.top = `${top}px`;
-  //   }
-  //   let options = ref.children;
-  //   let randomOption = Math.floor(
-  //     Math.random() * fruits.length
-  //   );
-  //   let choosenOption = options[randomOption];
-  //   setTop(-choosenOption.offsetTop + 2);
-  //   return fruits[randomOption];
-  // };
-
 
   const getRandomWheel = () => {
     return [
@@ -39,24 +26,6 @@ export default function Tragaperras({ fnWinner, currentWinner }) {
       currentPictures[getIndex(currentPictures)],
       currentPictures[getIndex(currentPictures)],
     ];
-
-    const [isPlaying, setIsPlaying] = useState(false);
-  const wheelOne = getRandomWheel();
-  const wheelTwo = getRandomWheel();
-  const wheelThree = getRandomWheel();
-
-  const spinWheel = () => {
-    const interval = setInterval(() => {
-      setCurrentPictures(pictures1);
-    
-    }, 300);
-
-
-    setTimeout(() => {
-      clearInterval(interval);
-      setIsPlaying(false)
-    }, 1000);
-
   };
 
   console.log(currentWinner);
@@ -114,27 +83,6 @@ export default function Tragaperras({ fnWinner, currentWinner }) {
     }
   };
   
-  // const triggerSlotRotation = ref => {
-  //   function setTop(top) {
-  //     ref.style.top = `${top}px`;
-  //   }
-    // let options = ref.children;
-    // let randomOption = Math.floor(
-    //   Math.random() * fruits.length
-    // );
-    
-    // const triggerSlotRotation = ref => {
-    //   function setTop(top) {
-    //     ref.style.top = `${top}px`;
-    //   }
-    //   let options = ref.children;
-    //   let randomOption = Math.floor(
-    //     Math.random() * fruits.length
-    //   );
-    //   let choosenOption = options[randomOption];
-    //   setTop(-choosenOption.offsetTop + 2);
-    //   return fruits[randomOption];
-    // };
 
   return (
     <>
@@ -156,6 +104,3 @@ export default function Tragaperras({ fnWinner, currentWinner }) {
   );
 }
 
-
-
-}
