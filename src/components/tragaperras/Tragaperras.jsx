@@ -31,6 +31,7 @@ export default function Tragaperras({ fnWinner, currentWinner }) {
   //   return fruits[randomOption];
   // };
 
+
   const getRandomWheel = () => {
     return [
       currentPictures[getIndex(currentPictures)],
@@ -38,6 +39,24 @@ export default function Tragaperras({ fnWinner, currentWinner }) {
       currentPictures[getIndex(currentPictures)],
       currentPictures[getIndex(currentPictures)],
     ];
+
+    const [isPlaying, setIsPlaying] = useState(false);
+  const wheelOne = getRandomWheel();
+  const wheelTwo = getRandomWheel();
+  const wheelThree = getRandomWheel();
+
+  const spinWheel = () => {
+    const interval = setInterval(() => {
+      setCurrentPictures(pictures1);
+    
+    }, 300);
+
+
+    setTimeout(() => {
+      clearInterval(interval);
+      setIsPlaying(false)
+    }, 1000);
+
   };
 
   console.log(currentWinner);
@@ -138,78 +157,5 @@ export default function Tragaperras({ fnWinner, currentWinner }) {
 }
 
 
-// export default function Tragaperras({ fnWinner, currentWinner }) {
-  
-//   const [isPlaying, setIsPlaying] = useState(false);
 
-//   const pictures = [pato, hongo, bm, patricio];
-//   const [currentPictures, setCurrentPictures] = useState(pictures);
-  
-//   const getIndex = (arr) => {
-//     return Math.floor(Math.random() * arr.length);
-//   };
-  
-
-
-// const getRandomWheel = () => {
-//   return [currentPictures[getIndex(currentPictures)],currentPictures[getIndex(currentPictures)],currentPictures[getIndex(currentPictures)],currentPictures[getIndex(currentPictures)]];
-// }
-
- 
-//   const wheelOne = getRandomWheel();
-//   const wheelTwo = getRandomWheel();
-//   const wheelThree = getRandomWheel();
-
-//   const spinWheel = () => {
-//     const interval = setInterval(() => {
-//       setCurrentPictures(pictures);
-    
-//     }, 300);
-
-
-//     setTimeout(() => {
-//       clearInterval(interval);
-//       setIsPlaying(false)
-//     }, 1000);
-//   };
-
-
-//   useEffect(() => {
-//     if (isPlaying) {
-//       spinWheel();
-//     } else {
-//       checkWinner();
-//     }
-//   }, [isPlaying]);
-
-
-//   const checkWinner = () => {
-//     if (wheelOne[2] === wheelTwo[2] && wheelTwo[2] === wheelThree[2]) {
-//       fnWinner(true);
-
-//     }
-//     setIsPlaying(false);
-//   };
-//   return (
-//     <>
-//       <div className="container">
-//       <div className='arrow'></div>
-//         <div className="card-container">
-//          <WheelOne></WheelOne>
-//         </div>
-//         <div className="card-container">
-//           <WheelTwo></WheelTwo>
-//         </div>
-//         <div className="card-container">
-//         <WheelThree></WheelThree>
-//           <div className='arrow2'></div>
-//         </div>
-//       </div>
-//       <BotonStart
-//         fnStart={setIsPlaying}
-//         fnCheckWinner={fnWinner}
-//         fnWinning={currentWinner}
-//       />
-//     </>
-//   );
-// }
+}
