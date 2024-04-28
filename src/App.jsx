@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Tragaperras from './components/tragaperras/Tragaperras';
 import Winner from './components/Winner/Winner';
+import React from 'react'
 
-function App() {
+
+
+const App = () => {
   const [isWinner, setIsWinner] = useState(false);
 
   const winner = () => {
@@ -14,14 +17,12 @@ function App() {
     }
   } 
 
-  
   return (
-    <>
-  
-  {winner()}
-    
-    </>
+    <div>
+      {winner()}
+    </div>
   )
 }
 
 export default App
+ 

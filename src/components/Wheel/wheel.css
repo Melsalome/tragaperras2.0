@@ -1,0 +1,68 @@
+img {
+    max-width: 100%;
+  }
+  .card {
+
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: white;
+  }
+  
+ 
+  .card img {
+    height: auto; 
+    display: block;
+    /* width: 100%; */
+  }
+  
+
+  /* .card-container {
+    display: flex;
+    border: 7px solid black;
+  } */
+  
+  /* .container {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    gap: 1px;
+  } */
+  .card___div {
+    width: 100px;
+    height: 183px;
+  }
+  .card___div--winner {
+    display: flex;
+    width: 156px;
+    height: 183px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card___div--winner img {
+    width: 100%; 
+    height: auto; 
+  }
+  
+  .card___div--winner::before {
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(
+      255,
+      255,
+      0,
+      0.244
+    ); 
+    z-index: 1; 
+  }
+  
